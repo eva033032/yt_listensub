@@ -18,14 +18,14 @@
       </div>
     </header>
     <section class="connection" aria-live="polite"><span id="connection-dot"></span><span id="connection">Looking for YouTube tabs…</span><select id="video-select" aria-label="Select YouTube video" hidden></select></section>
-    <section class="details"><span id="title">No video selected</span><span id="playback">—</span><time id="time">0:00</time></section>
+    <section class="details"><span id="title">No video selected</span><span id="playback">Not connected</span><time id="time">0:00</time></section>
     <details class="paste-panel">
       <summary>Paste a transcript with timestamps</summary>
       <p>One cue per line, for example: <code>00:01:32 outside. So my morning I will</code>. SRT/VTT timestamp blocks are also accepted.</p>
       <textarea id="transcript-input" rows="6" placeholder="00:01:32 outside. So my morning I will&#10;00:01:34 start with a morning walk. And my only"></textarea>
       <div class="paste-actions"><button id="use-transcript" type="button">Use transcript</button><button id="clear-transcript" type="button">Clear</button><span id="paste-status" aria-live="polite"></span></div>
     </details>
-    <div class="transport-controls" aria-label="YouTube playback and sentence controls">
+    <div class="transport-controls" aria-label="YouTube playback controls">
       <button id="play-toggle" type="button" disabled>Play</button>
       <span id="control-status" class="control-status" aria-live="polite"></span>
     </div>

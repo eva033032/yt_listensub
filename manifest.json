@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "ListenSub",
-  "version": "0.2.6",
+  "version": "0.2.8",
   "description": "A separate subtitle reader synchronized with a YouTube tab.",
   "permissions": ["tabs"],
   "background": { "service_worker": "background.js" },

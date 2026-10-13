@@ -93,9 +93,9 @@ function displayTime() {
 function render() {
   const connected = Boolean(state && Date.now() - state.updatedAt < 5000);
   document.body.classList.toggle("connected", connected);
-  $("connection").textContent = connected ? "YouTube tab connected" : tabs.length ? "Waiting for selected YouTube tab…" : "No YouTube watch tab connected";
+  $("connection").textContent = connected ? "YouTube tab connected" : tabs.length ? "Waiting for selected YouTube tab..." : "No YouTube watch tab connected";
   $("title").textContent = connected ? state.title : "No video selected";
-  $("playback").textContent = connected ? state.ended ? "Ended" : state.paused ? "Paused" : "Playing" : "—";
+  $("playback").textContent = connected ? state.ended ? "Ended" : state.paused ? "Paused" : "Playing" : "Not connected";
   $("play-toggle").disabled = !connected;
   $("play-toggle").textContent = connected && !state.paused ? "Pause" : "Play";
   $("control-status").textContent = controlStatus;
@@ -146,6 +146,7 @@ $("play-toggle").addEventListener("click", () => {
   controlStatus = "";
   port.postMessage({ protocol: "listensub/1", type: "CONTROL", command: state.paused ? "PLAY" : "PAUSE" });
 });
+
 select.addEventListener("change", () => port.postMessage({ protocol: "listensub/1", type: "SELECT_TAB", tabId: Number(select.value) }));
 $("reconnect").addEventListener("click", () => port.postMessage({ protocol: "listensub/1", type: "REFRESH_TABS" }));
 $("font-size").addEventListener("input", (event) => document.documentElement.style.setProperty("--caption-size", `${event.target.value}px`));

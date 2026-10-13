@@ -1,7 +1,7 @@
 (() => {
   const PROTOCOL = "listensub/1";
   try { window.__listensubStop?.(); } catch {}
-  console.info("[ListenSub] playback clock 0.2.6 loaded");
+  console.info("[ListenSub] playback clock 0.2.8 loaded");
 
   let active = true;
   let observedVideo = null;
