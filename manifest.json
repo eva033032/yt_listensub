@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "ListenSub",
+  "version": "0.2.6",
+  "description": "A separate subtitle reader synchronized with a YouTube tab.",
+  "permissions": ["tabs"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "Open ListenSub subtitles" },
+  "content_scripts": [{
+    "matches": ["https://www.youtube.com/watch*"],
+    "js": ["youtube-content.js"],
+    "run_at": "document_idle",
+    "world": "ISOLATED"
+  }]
+}

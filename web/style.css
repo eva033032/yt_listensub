@@ -1,0 +1,38 @@
+:root { color-scheme: light; font-family: "Segoe UI", "Noto Sans TC", Arial, sans-serif; background: #f5f6f2; color: #263a3e; --blue: #547b88; --blue-deep: #355b68; --green: #648b72; --green-pale: #e5eee7; --coffee: #ad7652; --paper: #fbfaf6; --ink-soft: #6e7d7d; --line: #dce3dc; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 340px; min-height: 100vh; background: radial-gradient(ellipse at 85% 5%, #e5eeeb 0, transparent 36%), #f5f6f2; }
+.shell { max-width: 1040px; min-height: 100vh; margin: auto; padding: 30px clamp(20px, 5vw, 64px); display: flex; flex-direction: column; }
+header, .controls, .connection, .details { display: flex; align-items: center; }
+header { justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--line); padding-bottom: 22px; }
+h1 { margin: 0; color: var(--blue-deep); font-family: Georgia, "Noto Serif TC", serif; font-size: 27px; letter-spacing: .01em; }
+.eyebrow { margin: 0 0 5px; color: var(--green); font-size: 10px; font-weight: 700; letter-spacing: .17em; }
+.controls { gap: 12px; color: var(--ink-soft); font-size: 12px; }
+.control-status { min-height: 0; margin: 0 0 0 8px; color: var(--coffee); font-size: 12px; }
+input { width: 90px; accent-color: var(--green); }
+code { color: var(--coffee); }
+textarea { display: block; width: 100%; resize: vertical; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--blue-deep); padding: 12px; font: 14px/1.5 Consolas, monospace; }
+textarea:focus { outline: 2px solid #648b7240; border-color: var(--green); }
+button, select { border: 1px solid #cfdbd4; border-radius: 9px; background: var(--paper); color: var(--blue-deep); padding: 8px 11px; font: inherit; }
+button { cursor: pointer; box-shadow: 0 2px 5px #3855500d; }
+button:hover { background: var(--green-pale); border-color: #a9c2b0; }
+.connection { gap: 9px; padding: 20px 0 14px; color: var(--ink-soft); font-size: 13px; }
+#connection-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--coffee); box-shadow: 0 0 0 3px #ad76521a; }
+.connected #connection-dot { background: var(--green); box-shadow: 0 0 0 3px #648b721c; }
+.details { justify-content: space-between; gap: 18px; color: var(--ink-soft); font-size: 13px; }
+#title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #425c60; }
+.paste-panel { margin-top: 20px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: #fbfaf6cc; color: var(--ink-soft); font-size: 13px; }
+.paste-panel summary { color: var(--blue-deep); font-weight: 600; cursor: pointer; }
+.paste-panel p { line-height: 1.6; }
+.paste-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+#paste-status { color: var(--green); }
+.transport-controls { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; min-height: 58px; margin: 10px 0 0; padding: 8px 14px; border: 1px solid var(--line); border-radius: 12px; background: #eaf0ebaa; }
+.transport-controls button { min-width: 44px; min-height: 40px; }
+#play-toggle { min-width: 92px; background: var(--green-pale); border-color: #b7cbbb; font-weight: 600; }
+.transport-controls button:disabled { cursor: default; opacity: .45; }
+.captions { flex: 1; min-height: 240px; display: flex; flex-direction: column; justify-content: center; text-align: center; padding: 34px 0; }
+.captions p { margin: 12px auto; max-width: 850px; }
+.neighbor { min-height: 1.2em; color: #94a29d; font-size: 18px; }
+.current { color: #29454c; font-size: var(--caption-size, 42px); line-height: 1.4; font-weight: 600; text-wrap: pretty; }
+footer { color: #74817d; font-size: 12px; line-height: 1.7; border-top: 1px solid var(--line); padding-top: 16px; }
+kbd { background: var(--green-pale); border: 1px solid #d3e0d6; border-radius: 4px; padding: 2px 6px; color: var(--blue-deep); }
+@media (max-width: 650px) { header { align-items: flex-start; flex-direction: column; } .controls { flex-wrap: wrap; } .current { font-size: min(var(--caption-size, 42px), 9vw); } .transport-controls { gap: 8px; } .control-status { flex-basis: 100%; margin: 0; text-align: center; } }

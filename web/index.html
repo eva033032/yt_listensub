@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ListenSub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div><p class="eyebrow">LISTENING PRACTICE</p><h1>ListenSub</h1></div>
+      <div class="controls">
+        <label for="font-size">Text size</label>
+        <input id="font-size" type="range" min="24" max="64" value="42" aria-label="Caption font size">
+        <button id="follow" type="button" aria-pressed="true">Follow: on</button>
+        <button id="reconnect" type="button">Reconnect</button>
+      </div>
+    </header>
+    <section class="connection" aria-live="polite"><span id="connection-dot"></span><span id="connection">Looking for YouTube tabs…</span><select id="video-select" aria-label="Select YouTube video" hidden></select></section>
+    <section class="details"><span id="title">No video selected</span><span id="playback">—</span><time id="time">0:00</time></section>
+    <details class="paste-panel">
+      <summary>Paste a transcript with timestamps</summary>
+      <p>One cue per line, for example: <code>00:01:32 outside. So my morning I will</code>. SRT/VTT timestamp blocks are also accepted.</p>
+      <textarea id="transcript-input" rows="6" placeholder="00:01:32 outside. So my morning I will&#10;00:01:34 start with a morning walk. And my only"></textarea>
+      <div class="paste-actions"><button id="use-transcript" type="button">Use transcript</button><button id="clear-transcript" type="button">Clear</button><span id="paste-status" aria-live="polite"></span></div>
+    </details>
+    <div class="transport-controls" aria-label="YouTube playback and sentence controls">
+      <button id="play-toggle" type="button" disabled>Play</button>
+      <span id="control-status" class="control-status" aria-live="polite"></span>
+    </div>
+    <section class="captions" id="captions">
+      <p class="neighbor" id="previous"></p>
+      <p class="current" id="current">Open a YouTube video in a tab, then connect ListenSub.</p>
+      <p class="neighbor" id="next"></p>
+    </section>
+    <footer>Paste a timestamped transcript above. ListenSub keeps the original YouTube tab as the player and follows its playback clock; transcript text stays in this browser.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
